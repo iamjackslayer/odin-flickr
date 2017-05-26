@@ -3,7 +3,9 @@ ID: <%= f.text_field :id %>
 <%= f.submit :submit %>
 <% end %>
 <% if @photos %>
-	<% @photos.each do |photo| %>
-	<%= image_tag(photo[:url]) %>
+	<% @photos.each do |row| %>
+		<% row.each do |photo|
+			<%= image_tag(photo[:url]) %>
+		<% end %>
 	<% end %>
 <% end %>
