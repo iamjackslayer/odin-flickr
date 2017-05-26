@@ -5,4 +5,5 @@ ID: <%= f.text_field :id %>
 <% if @photos %>
 	<% @photos.each do |photo| %>
 	<%= image_tag(photo[:url]) %>
+	<% end %>
 <% end %>
