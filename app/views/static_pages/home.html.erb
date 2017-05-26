@@ -1,4 +1,4 @@
-<%= form_for :user, url:{action: :create}, method: :post do |f| %>
+<%= form_for :user, url:{action: :index}, method: :get do |f| %>
 ID: <%= f.text_field :id %>
 <%= f.submit :submit %>
 <% end %>
