@@ -6,11 +6,11 @@ class StaticPagesController < ApplicationController
 		FlickRaw.shared_secret="8db725aa215775af"
 
 		@list = flickr.photos.getRecent
-		@id = list[0].id
-		@secret = list[0].secret
+		@id = @list[0].id
+		@secret = @list[0].secret
 		@info = flickr.photos.getInfo :photo_id => @id, :secret => @secret
 
-		
+
 	end
 	def create
 		
