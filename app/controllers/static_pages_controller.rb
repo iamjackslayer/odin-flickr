@@ -8,7 +8,7 @@ class StaticPagesController < ApplicationController
 		# @list = flickr.photos.getRecent
 		# @id = @list[0].id
 		# @secret = @list[0].secret
-		@photos = flickr.photos.search(user_id: "9732441@N05")
+		@photos = flickr.photos.search(user_id: "9732441@N05", extra: "url")
 
 
 	end
