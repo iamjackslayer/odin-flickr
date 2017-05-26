@@ -5,10 +5,8 @@ class StaticPagesController < ApplicationController
 		FlickRaw.api_key="02ec0f82e01c354e9b237f87b31ffd34"
 		FlickRaw.shared_secret="8db725aa215775af"
 
-		# @list = flickr.photos.getRecent
-		# @id = @list[0].id
-		# @secret = @list[0].secret
-		@photos = flickr.photos.search(user_id: "9732441@N05", extra: "url")
+		@user_id = params[:user][:id] if !params.empty?
+		@photos = flickr.photos.search(user_id: @user_id, extra: "url") if @user_id
 
 
 	end
