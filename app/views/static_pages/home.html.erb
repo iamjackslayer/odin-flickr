@@ -1,0 +1,5 @@
+<%= form_for :user, url:{action: :create}, method: :post do |f| %>
+ID: <%= f.text_field :id %>
+<%= f.submit :submit %>
+<% end %>
+<%= @photos if defined? @photos %>
