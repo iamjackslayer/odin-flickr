@@ -7,8 +7,8 @@ class StaticPagesController < ApplicationController
 
 		if params
 			@user_id = params[:user][:id]
+			@photos = flickr.photos.search(user_id: @user_id) 
 		end
-		@photos = flickr.photos.search(user_id: @user_id) if @user_id
 
 
 	end
