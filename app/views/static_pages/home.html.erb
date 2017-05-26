@@ -3,7 +3,7 @@ ID: <%= f.text_field :id %>
 <%= f.submit :submit %>
 <% end %>
 <% if @photos %>
-	<% @photos.each do |row| %>
-		<%= row.id %>
+	<% @photos.each do |photo| %>
+		<%= image_tag("https://#{photo.farm}staticflickr.com/#{photo.server}/#{photo.id}_#{photo.secret}.jpg" %>
 	<% end %>
 <% end %>
