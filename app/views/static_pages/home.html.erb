@@ -4,6 +4,6 @@ ID: <%= f.text_field :id %>
 <% end %>
 <% if @photos %>
 	<% @photos.each do |row| %>
-		<%= row[:id] %>
+		<%= row.id %>
 	<% end %>
 <% end %>
