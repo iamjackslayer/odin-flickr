@@ -7,10 +7,10 @@ class StaticPagesController < ApplicationController
 		FlickRaw.shared_secret="8db725aa215775af"
 
 		if params.has_key?(:user)
-			if params[:user][:id]
+			if !params[:user][:id].empty?
 				@user_id = params[:user][:id]
 				@photos = flickr.photos.search(user_id: @user_id) 
-			elsif params[:user][:user_name]
+			elsif !params[:user][:user_name].empty?
 				@user_name = params[:user][:user_name]
 				@user = JSON.parse(flickr.people.findByUsername(username: @user_name))
 				@photos = flickr.photos.search(user_id: @user[:user][:id])
