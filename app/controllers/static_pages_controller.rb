@@ -13,8 +13,8 @@ class StaticPagesController < ApplicationController
 				@photos = flickr.photos.search(user_id: @user_id) 
 			elsif !params[:user][:user_name].empty?
 				@user_name = params[:user][:user_name]
-				@user = flickr.people.findByUsername(:username[:_content] => @user_name)
-				@photos = flickr.photos.search(user_id: @user[:user][:id])
+				@user = flickr.people.findByUsername(username: @user_name)
+				@photos = flickr.photos.search(user_id: @user.id])
 			end	
 		end
 	end
