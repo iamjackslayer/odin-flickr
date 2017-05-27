@@ -1,7 +1,7 @@
 Please enter either info below.
 <%= form_for :user, url:{action: :home}, method: :get do |f| %>
 ID: <%= f.text_field :id %>
-Username: <%= f.text_field :user_name %>
+Username: <%= f.text_field(:user_name) %>
 <%= f.submit :submit %>
 
 <% end %>
@@ -9,6 +9,4 @@ Username: <%= f.text_field :user_name %>
 	<% @photos.each do |photo| %>
 		<%= image_tag("https://farm#{photo.farm}.staticflickr.com/#{photo.server}/#{photo.id}_#{photo.secret}.jpg") %>
 	<% end %>
-<% elsif defined? @photo %>
-	<%= image_tag("https://farm#{photo.farm}.staticflickr.com/#{photo.server}/#{photo.id}_#{photo.secret}.jpg") %>
 <% end %>
