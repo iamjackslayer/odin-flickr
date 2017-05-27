@@ -1,4 +1,5 @@
 require 'flickraw'
+require 'json'
 class StaticPagesController < ApplicationController
 
 	def home 
@@ -11,7 +12,7 @@ class StaticPagesController < ApplicationController
 				@photos = flickr.photos.search(user_id: @user_id) 
 			elsif params[:user][:user_name]
 				@user_name = params[:user][:user_name]
-				@user = flickr.people.findByUsername(username: @user_name)
+				@user = JSON.parse(flickr.people.findByUsername(username: @user_name))
 				@photos = flickr.photos.search(user_id: @user[:user][:id])
 			end	
 		end
