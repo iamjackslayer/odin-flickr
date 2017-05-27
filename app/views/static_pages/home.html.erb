@@ -1,5 +1,5 @@
 Please enter either info below.
-<%= form_for :user, url:{action: :home}, method: :get do |f| %>
+<%= form_for "user", url:{action: :home}, method: :get do |f| %>
 ID: <%= f.text_field :id %>
 Username: <%= f.text_field(:username) %>
 <%= f.submit :submit %>
